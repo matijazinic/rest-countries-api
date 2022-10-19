@@ -18,6 +18,10 @@
 # misc
 .DS_Store
 *.pem
+rest-countries-api-with-color-theme-switcher-master
+.gitignore
+/pages/api/
+.eslintrc.json
 
 # debug
 npm-debug.log*

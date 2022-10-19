@@ -2,7 +2,100 @@
   padding: 0 2rem;
 }
 
-.main {
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.countries {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem 5rem;
+}
+
+.mainTop {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 2rem;
+  position: relative;
+}
+
+.mainTop input,
+.mainTop select {
+  min-height: 3rem;
+  border: none;
+  background-color: var(--primary);
+  border-radius: 0.25rem;
+}
+
+.mainTop input {
+  padding-inline: 3rem 1rem;
+  min-width: 40%;
+}
+
+.mainTop select {
+  cursor: pointer;
+}
+
+.mainTop input:focus-visible,
+.mainTop select:focus-visible {
+  outline: 1px solid var(--text);
+}
+
+.mainTop select::before {
+  content: "ˇ";
+  position: absolute;
+}
+
+.searchIcon {
+  width: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+}
+
+.country {
+  border-radius: 0.25rem;
+  background-color: var(--primary);
+  cursor: pointer;
+  transition: all 100ms ease;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 19px 0px;
+}
+
+.country:hover {
+  background-color: var(--primary-alt);
+}
+
+.countryFlag {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.countryInfo {
+  padding: 1rem;
+  color: var(--text);
+}
+
+.countryInfo p span:first-child {
+  font-weight: 600;
+}
+
+.name {
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.capital > span:first-child {
+  font-weight: 600;
+}
+.capital > span:not(:first-child):not(:nth-child(2))::before {
+  content: ", ";
+}
+
+/* .main {
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
@@ -10,16 +103,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.footer {
+/* .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .footer a {
   display: flex;
@@ -108,22 +201,21 @@
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@media (max-width: 1350px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+@media (max-width: 1100px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 2rem;
   }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
+}
+
+@media (max-width: 680px) {
+  .countries {
+    grid-template-columns: auto;
   }
 }

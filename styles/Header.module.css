@@ -1,0 +1,46 @@
+.header {
+  background-color: var(--primary);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 19px 0px;
+}
+
+.headerElements {
+  max-width: 1280px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.dark {
+  position: relative;
+  cursor: pointer;
+}
+
+.darkIcon {
+  width: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+.darkButton {
+  background: var(--primary);
+  padding-left: 2.5rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.darkButton:hover {
+  background-color: var(--background);
+}
+
+@media (max-width: 680px) {
+  .headerElements {
+    padding: 1rem;
+  }
+  .headerElements h1 {
+    font-size: 1.2rem;
+  }
+}

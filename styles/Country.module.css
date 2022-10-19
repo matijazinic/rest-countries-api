@@ -1,0 +1,90 @@
+.container {
+  padding: 0 2rem;
+}
+
+.top {
+  margin-block: 3rem;
+  position: relative;
+}
+
+.backButton {
+  padding-block: 0.5rem;
+  padding-inline: 2.5rem 2rem;
+  background-color: var(--primary);
+}
+
+.backIcon {
+  position: absolute;
+  width: 1rem;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.backButton:hover {
+  background-color: var(--primary-alt);
+}
+
+.countryWrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.countryInfo {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 3rem;
+  margin-block: 2rem 3rem;
+}
+
+.countryInfo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.countryInfo p span:first-child {
+  font-weight: 600;
+}
+
+.capital > span:first-child,
+.currencies > span:first-child,
+.borders > span:first-child {
+  font-weight: 600;
+}
+.multInfoValue:not(:first-child):not(:nth-child(2))::before {
+  content: ", ";
+}
+
+.button {
+  background: var(--primary);
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.button:hover {
+  background-color: var(--primary-alt);
+}
+
+.borders button {
+  margin: 0.25rem;
+}
+
+@media (max-width: 1350px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 2rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .info {
+    margin-top: 2rem;
+  }
+  .countryWrap,
+  .countryInfo {
+    grid-template-columns: auto;
+  }
+}
