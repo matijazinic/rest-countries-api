@@ -20,7 +20,7 @@
 *.pem
 rest-countries-api-with-color-theme-switcher-master
 .gitignore
-/pages/api/
+deploy.sh
 .eslintrc.json
 
 # debug

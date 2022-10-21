@@ -25,14 +25,6 @@ export default function Home({ countries }) {
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState("");
 
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
-
-  const handleRegion = (e) => {
-    setRegion(e.target.value);
-  };
-
   const filters = [
     { value: "", name: "Filter by Region:" },
     { value: "Africa", name: "Africa" },
@@ -50,7 +42,11 @@ export default function Home({ countries }) {
           name="description"
           content="REST Countries API challenge provided by FrontEnd Mentor."
         />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="/rest-countries-api/favicon.png"
+        />
       </Head>
 
       <main className={styles.container}>
@@ -60,17 +56,17 @@ export default function Home({ countries }) {
             name="search"
             id="search"
             placeholder="Search for a country..."
-            onChange={handleSearch}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <MagnifyingGlassIcon className={styles.searchIcon} />
-          <select name="filter" id="filter">
+          <select
+            name="filter"
+            id="filter"
+            onChange={(e) => setRegion(e.target.value)}
+          >
             {filters.map((filt) => {
               return (
-                <option
-                  key={filt.name}
-                  value={filt.value}
-                  onClick={handleRegion}
-                >
+                <option key={filt.name} value={filt.value}>
                   {filt.name}
                 </option>
               );
@@ -137,8 +133,6 @@ export default function Home({ countries }) {
             })}
         </div>
       </main>
-
-      <footer className={styles.footer}></footer>
     </>
   );
 }

@@ -12,6 +12,10 @@
   padding: 2rem;
 }
 
+.logoTitle {
+  cursor: pointer;
+}
+
 .dark {
   position: relative;
   cursor: pointer;

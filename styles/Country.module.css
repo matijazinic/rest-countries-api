@@ -9,7 +9,7 @@
 
 .backButton {
   padding-block: 0.5rem;
-  padding-inline: 2.5rem 2rem;
+  padding-inline: 2.5rem 1.5rem;
   background-color: var(--primary);
 }
 

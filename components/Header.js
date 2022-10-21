@@ -3,18 +3,21 @@ import styles from "../styles/Header.module.css";
 import { useTheme } from "next-themes";
 import { MoonIcon as MoonEmpty } from "@heroicons/react/24/outline";
 import { MoonIcon as MoonFull } from "@heroicons/react/24/solid/";
+import { useRouter } from "next/router";
 
 function Header() {
   const [isMounted, setIsMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
 
   useEffect(() => {
+    const initTheme = localStorage.getItem("theme");
     setIsMounted(true);
-    setTheme(localStorage.getItem("theme"));
+    setTheme(initTheme ? initTheme : "light");
   }, []);
 
   function changeTheme() {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => (prev == "light" ? "dark" : "light"));
   }
 
   useEffect(() => {
@@ -29,7 +32,9 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerElements}>
-        <h1>Where in the World?</h1>
+        <h1 className={styles.logoTitle} onClick={() => router.push("/")}>
+          Where in the World?
+        </h1>
         <div className={styles.dark} onClick={changeTheme}>
           {theme === "light" ? (
             <MoonEmpty className={styles.darkIcon} />

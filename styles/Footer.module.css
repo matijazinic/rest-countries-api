@@ -1,0 +1,11 @@
+.footer {
+  margin-block: 5rem 2rem;
+}
+
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

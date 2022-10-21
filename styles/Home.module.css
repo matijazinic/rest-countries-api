@@ -30,6 +30,7 @@
 }
 
 .mainTop input {
+  position: relative;
   padding-inline: 3rem 1rem;
   min-width: 40%;
 }
@@ -41,11 +42,6 @@
 .mainTop input:focus-visible,
 .mainTop select:focus-visible {
   outline: 1px solid var(--text);
-}
-
-.mainTop select::before {
-  content: "ˇ";
-  position: absolute;
 }
 
 .searchIcon {
@@ -62,6 +58,7 @@
   cursor: pointer;
   transition: all 100ms ease;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 19px 0px;
+  max-width: 300px; /* Same width as the country picture specified in the <Image> component on index page */
 }
 
 .country:hover {
@@ -217,5 +214,16 @@
 @media (max-width: 680px) {
   .countries {
     grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTop {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .searchIcon {
+    top: 1.5rem;
   }
 }
