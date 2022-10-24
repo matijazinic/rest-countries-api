@@ -7,17 +7,17 @@ import { useRouter } from "next/router";
 
 function Header() {
   const [isMounted, setIsMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme("light");
   const router = useRouter();
 
   useEffect(() => {
     const initTheme = localStorage.getItem("theme");
     setIsMounted(true);
-    setTheme(initTheme ? initTheme : "light");
+    setTheme(initTheme ? initTheme : theme);
   }, []);
 
   function changeTheme() {
-    setTheme((prev) => (prev == "light" ? "dark" : "light"));
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   }
 
   useEffect(() => {

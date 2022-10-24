@@ -6,7 +6,7 @@ import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider enableSystem={false}>
+    <ThemeProvider enableSystem={false} disableTransitionOnChange>
       <Layout>
         <NextNProgress />
         <Component {...pageProps} />
